@@ -2,7 +2,7 @@
 
 This repository documents my 15-day learning sprint where I:
 - Learn Git & GitHub by using them daily
-- Build Python projects
+- Build projects
 - Move toward building software + hardware systems
 
 ## Structure
