@@ -11,7 +11,7 @@ VIDEO_EXTENSIONS = [".mp4", ".mkv"]
 # define the organize function
 def organize():
     print("\n")
-    print("########## File Organizer ##########")
+    print("############ File Organizer ############")
     print("\n")
 
     # Get user input for source and destination directories and action
