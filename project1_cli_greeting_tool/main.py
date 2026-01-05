@@ -2,7 +2,7 @@ def greet(name):
     return f"Hello, {name}. How are you today?"
 
 def main():
-    print("### Welcome to the Greeting Program ###")
+    print("#### Welcome to the Greeting Program ####")
     
     name = input("Please enter your name: ").strip()
 
