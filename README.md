@@ -88,3 +88,15 @@ This project focuses on:
 - Handling edge cases to avoid data loss
 - Structuring projects and commits cleanly with Git
 
+---
+
+## Day 3 — Code Refactoring & Cleanup
+
+### Overview
+Refactored the CLI File Organizer code to improve structure and readability while keeping the same behavior.
+
+The focus was on:
+- Separating responsibilities into smaller functions
+- Making the code easier to understand and extend
+
+No new features were added in this step.
