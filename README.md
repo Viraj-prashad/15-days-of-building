@@ -73,7 +73,7 @@ This project focuses on:
 
 3. Run the script:
    ```bash
-   python organise.py
+   python organize.py
    ```
 
 4. Follow the prompts:
