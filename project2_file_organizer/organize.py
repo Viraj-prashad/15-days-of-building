@@ -8,6 +8,32 @@ DOCUMENT_EXTENSIONS = [".pdf", ".docx", ".txt"]
 VIDEO_EXTENSIONS = [".mp4", ".mkv"]
 
 
+def transfer_file(destination_file_path, option, item, category, item_path):
+    """Move or copy a single file into its category folder.
+
+    This function does three things:
+    1) Skips if the destination file already exists
+    2) Copies the file when option == "copy"
+    3) Moves the file when option == "move"
+
+    Notes:
+    - The caller (organize) already validates the option value.
+    - Messages are printed so you can see what happened for each file.
+    """
+    # If a file with the same name already exists at the destination, do nothing.
+    if os.path.exists(destination_file_path):
+        print(f"File already exists in destination: {item}. Skipping.")
+        return
+
+    # Perform the requested action
+    if option == "copy":
+        shutil.copy2(item_path, destination_file_path)
+        print(f"File: {item} -> {category}")
+    elif option == "move":
+        shutil.move(item_path, destination_file_path)
+        print(f"File: {item} -> {category}")
+
+
 # define the organize function
 def organize():
     print("\n")
@@ -75,19 +101,7 @@ def organize():
             # Move or copy file according to user's wish to category folder
             destination_file_path = os.path.join(category_folder, item)
 
-            if option == "copy":
-                if os.path.exists(destination_file_path):
-                    print(f"File already exists in destination: {item}. Skipping.")
-                else:
-                    shutil.copy2(item_path, destination_file_path)
-                    print(f"File: {item} → {category}")
-
-            elif option == "move":
-                if os.path.exists(destination_file_path):
-                    print(f"File already exists in destination: {item}. Skipping.")
-                else:
-                    shutil.move(item_path, destination_file_path)
-                    print(f"File: {item} → {category}")
+            transfer_file(destination_file_path, option, item, category, item_path)
 
         # Ignore folders
         elif os.path.isdir(item_path):
