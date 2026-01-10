@@ -1,11 +1,59 @@
-tasks = {}
-task_id_counter = 1
+import json
+import os
+
+
+def load_data():
+    if not os.path.exists("tasks.json"):
+        return {}, 1
+        
+    
+    try:
+        with open("tasks.json", "r") as file:
+            data = json.load(file)
+        
+        raw_tasks = data["tasks"]
+        next_task_id = data["next_task_id"]
+
+        # Convert task IDs back to integers
+        tasks = {}
+        for task_id, task_info in raw_tasks.items():
+            tasks[int(task_id)] = task_info
+
+        return tasks, next_task_id
+
+    except (json.JSONDecodeError, KeyError):
+        print("Error: tasks.json is empty or corrupted.")
+        exit()
+
+def save_data(tasks, task_id_counter):
+    data = {
+        "tasks": {},
+        "next_task_id": task_id_counter
+    }
+
+    # Convert task IDs to strings for JSON
+    for task_id, task_info in tasks.items():
+        data["tasks"][str(task_id)] = task_info
+
+    try:
+        with open("tasks.json", "w") as file:
+            json.dump(data, file, indent=4)
+    except Exception as e:
+        print(f"Error saving data: {e}")
+
+
+
+tasks, task_id_counter = load_data()
+
 
 while True:
     command = input("Enter a command (type 'exit' to quit): ")
     if command.lower() == "exit":
+        save_data(tasks, task_id_counter)
+        print("Tasks saved. Goodbye!")
         break
     
+
     elif command == "greet":
         print('''
               Hello! Welcome to the Task Manager.
@@ -16,6 +64,7 @@ while True:
               
               ''')
         
+
     elif command == "help":
         print('''
               Available commands:
@@ -25,6 +74,7 @@ while True:
               - done <task_id>: Mark the task with the specified ID as completed.
               - exit: Quit the program.
               ''')
+    
     
     elif command.startswith("add "):
         task_title = command[4:].strip()
@@ -47,7 +97,12 @@ while True:
 
     
     elif command.startswith("done "):
-        task_id = int(command[5:].strip())
+        try:
+            task_id = int(command[5:].strip())
+        except ValueError:
+            print("Please provide a valid task ID.")
+            continue
+
         if task_id not in tasks:
             print("Please provide a valid task ID.")
             continue
@@ -57,7 +112,12 @@ while True:
 
 
     elif command.startswith("delete "):
-        task_id = int(command[7:].strip())
+        try:
+            task_id = int(command[7:].strip())
+        except ValueError:
+            print("Please provide a valid task ID.")
+            continue
+
         if task_id not in tasks:
             print("Please provide a valid task ID.")
             continue
