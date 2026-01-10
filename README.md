@@ -43,6 +43,21 @@ A command-line file organizer that scans a source directory, categorizes files b
 - Creates required folders automatically
 - Safe and non-destructive by default
 
+### ▶️ How to Use
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kei-araya/15-days-of-building.git
+```
+2. Navigate to the file organizer project:
+   ```bash
+   cd 15-days-of-building/project2_file_organizer
+```
+3. Run the script:
+   ```bash
+   python organize.py
+```
+
 ### What I Learned
 - Working with the filesystem using `os` and `shutil`
 - Handling user input safely
@@ -101,6 +116,21 @@ Enhanced the CLI task manager by adding persistent storage so tasks are retained
 - Converted data safely between Python and JSON formats
 - Ensured tasks are saved cleanly on program exit
 
+### ▶️ How to Use
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kei-araya/15-days-of-building.git
+```
+2. Navigate to the task manager project:
+   ```bash
+   cd 15-days-of-building/project3_task_manager
+```
+3. Run the program:
+   ```bash
+   python manage.py
+```
+
 ### What I Learned
 - File I/O in Python
 - JSON serialization and deserialization
@@ -110,7 +140,7 @@ Enhanced the CLI task manager by adding persistent storage so tasks are retained
 
 ---
 
-## 🚀 Goals Going Forward
+## Goals Going Forward
 
 - Build more advanced Python projects
 - Explore backend development concepts
