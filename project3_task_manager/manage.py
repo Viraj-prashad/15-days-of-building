@@ -47,7 +47,7 @@ tasks, task_id_counter = load_data()
 
 
 while True:
-    command = input("Enter a command (type 'exit' to quit): ")
+    command = input("Enter a command (type 'exit' to quit or 'help' for commands): ")
     if command.lower() == "exit":
         save_data(tasks, task_id_counter)
         print("Tasks saved. Goodbye!")
