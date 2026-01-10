@@ -48,15 +48,15 @@ A command-line file organizer that scans a source directory, categorizes files b
 1. Clone the repository:
    ```bash
    git clone https://github.com/kei-araya/15-days-of-building.git
-```
+   ```
 2. Navigate to the file organizer project:
    ```bash
    cd 15-days-of-building/project2_file_organizer
-```
+   ```
 3. Run the script:
    ```bash
    python organize.py
-```
+   ```
 
 ### What I Learned
 - Working with the filesystem using `os` and `shutil`
@@ -121,15 +121,15 @@ Enhanced the CLI task manager by adding persistent storage so tasks are retained
 1. Clone the repository:
    ```bash
    git clone https://github.com/kei-araya/15-days-of-building.git
-```
+   ```
 2. Navigate to the task manager project:
    ```bash
    cd 15-days-of-building/project3_task_manager
-```
+   ```
 3. Run the program:
    ```bash
    python manage.py
-```
+   ```
 
 ### What I Learned
 - File I/O in Python
