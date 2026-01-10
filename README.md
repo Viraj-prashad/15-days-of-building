@@ -33,70 +33,86 @@ A simple command-line greeting tool built to practice:
 
 ## Day 2 — CLI File Organizer (Python)
 
-### Project Overview
-A command-line file organizer built using Python.  
-The tool scans a source directory, categorizes files based on their extensions, and either **copies or moves** them into organized folders.
+### Overview
+A command-line file organizer that scans a source directory, categorizes files based on their extensions, and organizes them into folders.
 
-This project focuses on:
-- Safe filesystem operations
-- Clean CLI design
-- Incremental feature building
-- Practical use of Git during development
-
----
-
-### ⚙️ Features
-
-- Organizes files into categories:
-  - Images
-  - Documents
-  - Videos
-  - Other
-- User can choose between **copy** or **move**
-- Skips files if they already exist in the destination
-- Creates folders automatically if missing
-- Non-destructive and safe by default
-
----
-
-### 🛠️ How to Run the File Organizer
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kei-araya/15-days-of-building.git
-   ```
-
-2. Navigate to the project folder:
-   ```bash
-   cd 15-days-of-building/project2_file_organizer
-   ```
-
-3. Run the script:
-   ```bash
-   python organize.py
-   ```
-
-4. Follow the prompts:
-   - Enter the source directory path
-   - Enter the destination directory path
-   - Choose copy or move
+### Features
+- Categorizes files into Images, Documents, Videos, and Others
+- Supports copy or move operations
+- Skips files that already exist in the destination
+- Creates required folders automatically
+- Safe and non-destructive by default
 
 ### What I Learned
-- Working with the filesystem using os and shutil
-- Safely handling files and directories
-- Designing CLI tools with user input
-- Handling edge cases to avoid data loss
-- Structuring projects and commits cleanly with Git
+- Working with the filesystem using `os` and `shutil`
+- Handling user input safely
+- Structuring CLI tools
+- Incremental feature development using Git
 
 ---
 
 ## Day 3 — Code Refactoring & Cleanup
 
 ### Overview
-Refactored the CLI File Organizer code to improve structure and readability while keeping the same behavior.
+Focused on improving the internal structure of the file organizer project.
 
-The focus was on:
-- Separating responsibilities into smaller functions
-- Making the code easier to understand and extend
+### What I Did
+- Refactored repeated logic into reusable functions
+- Improved readability and maintainability of the code
+- Separated concerns for better extensibility
 
-No new features were added in this step.
+### What I Learned
+- Importance of clean code
+- How refactoring improves scalability
+- Writing functions with clear responsibilities
+
+---
+
+## Day 4 — CLI Task Manager (Core Features)
+
+### Overview
+Built a command-line task manager application using Python, focusing on core application logic and safe user interaction.
+
+### What I Did
+- Designed a command-driven CLI interface
+- Implemented task creation, viewing, completion, and deletion
+- Used dictionaries to manage structured in-memory state
+- Added input validation and error handling
+- Generated unique task IDs for reliable task management
+
+### What I Learned
+- Managing application state in memory
+- Parsing and validating user input
+- Working with dictionaries and nested data structures
+- Writing defensive code to prevent runtime crashes
+- Designing CLI tools with usability in mind
+
+---
+
+## Day 5 — Persistent Storage with JSON
+
+### Overview
+Enhanced the CLI task manager by adding persistent storage so tasks are retained across program runs.
+
+### What I Did
+- Designed a JSON-based data storage format
+- Implemented loading and saving of application state
+- Handled first-run and corrupted-file edge cases
+- Converted data safely between Python and JSON formats
+- Ensured tasks are saved cleanly on program exit
+
+### What I Learned
+- File I/O in Python
+- JSON serialization and deserialization
+- Handling type differences between JSON and Python
+- Designing reliable program startup and shutdown flows
+- Understanding persistence as a core application concept
+
+---
+
+## 🚀 Goals Going Forward
+
+- Build more advanced Python projects
+- Explore backend development concepts
+- Integrate software projects with hardware systems
+- Continue strengthening problem-solving and system design skills
