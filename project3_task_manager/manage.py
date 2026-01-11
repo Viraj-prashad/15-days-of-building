@@ -112,7 +112,7 @@ def greet():
 
 # ---------- Main Program ----------
 
-def main():
+def manage():
     tasks, task_id_counter = load_data()
 
     while True:
@@ -167,4 +167,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    manage()
