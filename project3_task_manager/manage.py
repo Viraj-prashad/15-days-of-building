@@ -92,7 +92,6 @@ def handle_delete(task_id, tasks):
 def handle_help():
     print("""
         Available commands:
-        - greet                Show welcome message
         - add <task_title>     Add a new task
         - view                 View all tasks
         - done <task_id>       Mark a task as completed
@@ -114,6 +113,7 @@ def greet():
 
 def manage():
     tasks, task_id_counter = load_data()
+    greet()
 
     while True:
         command = input("Enter command (type 'help' for options): ").strip()
@@ -123,10 +123,6 @@ def manage():
             save_data(tasks, task_id_counter)
             print("Tasks saved. Goodbye!")
             break
-
-        elif command == "greet":
-            greet()
-            print() # For better readability
 
         elif command == "help":
             handle_help()
@@ -168,3 +164,4 @@ def manage():
 
 if __name__ == "__main__":
     manage()
+    print() # For better readability
