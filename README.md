@@ -147,7 +147,7 @@ Enhanced the CLI task manager by adding persistent storage so tasks are retained
 
 ---
 
-## 🤝 Contributors
+## Contributors
 
 This project welcomes contributions from the community. Special thanks to:
 
