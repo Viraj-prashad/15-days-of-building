@@ -126,7 +126,13 @@ Enhanced the CLI task manager by adding persistent storage so tasks are retained
    ```bash
    cd 15-days-of-building/project3_task_manager
    ```
-3. Run the program:
+3. (Optional) Install colorama for colored terminal output:
+   ```bash
+   pip install colorama
+   ```
+   *Note: The program works without colorama; it gracefully falls back to plain text if the library is not installed.*
+
+4. Run the program:
    ```bash
    python manage.py
    ```
@@ -137,6 +143,15 @@ Enhanced the CLI task manager by adding persistent storage so tasks are retained
 - Handling type differences between JSON and Python
 - Designing reliable program startup and shutdown flows
 - Understanding persistence as a core application concept
+- Graceful degradation when optional dependencies are missing
+
+---
+
+## 🤝 Contributors
+
+This project welcomes contributions from the community. Special thanks to:
+
+- **[Vivichanispoopyhead](https://github.com/Viraj-prashad)** - Added optional colored terminal output (colorama) to the task manager for improved readability
 
 ---
 
