@@ -1,9 +1,28 @@
-from colorama import Fore, Style, init
+# Initialize colorama
+try:
+    from colorama import Fore, Style, init
+    init(autoreset=True)
+    COLOR_ENABLED = True
+except ImportError:
+    # Fallback if colorama is not installed
+    class Fore:
+        RED = ""
+        GREEN = ""
+        YELLOW = ""
+        BLUE = ""
+        MAGENTA = ""
+        CYAN = ""
+        WHITE = ""
+        RESET = ""
+
+    class Style:
+        RESET_ALL = ""
+
+    COLOR_ENABLED = False
+
 import json
 import os
 
-# Initialize colorama
-init(autoreset=True)
 
 
 # ---------- Persistence ----------
@@ -174,6 +193,3 @@ def manage():
 
 if __name__ == "__main__":
     manage()
-    print() # For better readability
-
-
